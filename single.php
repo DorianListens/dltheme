@@ -7,11 +7,13 @@
 						<?php the_post_thumbnail() ?>
 					</div>
 					<div class ="row">
-					<div class="nine columns">
+					
 						<h2 class="post-title"><?php the_title(); ?></h2>
-						<?php the_category(); ?>
+						<div class="entry-meta"><i class="icon-folder"></i><?php the_category(); ?>
+						 <?php if ( has_tag() ) : {echo '<i class="icon-tag"></i>'; the_tags( '', ', ', '');} endif; ?>
+						 	</div>
 						<?php the_content(); ?>
-					</div>
+					
 					
 				</div>
 				<?php endwhile; ?>

@@ -18,7 +18,7 @@ get_header(); ?>
 					<hr />
 					<div class="port-grid">
 <?php endwhile; 
-			$args = array( 'post_type' => 'dl_portfolio', 'posts_per_page' => 10 );
+			$args = array( 'post_type' => 'dl_portfolio', 'posts_per_page' => 12 );  //
 			$loop = new WP_Query( $args );
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
 		<div class="portfolio-item">
@@ -31,9 +31,9 @@ get_header(); ?>
 			<h3 class="entry-title">
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h3>
-			<div class="entry-excerpt">
+			<!--<div class="entry-excerpt">
 				<?php the_excerpt(); ?>
-			</div>
+			</div>-->
 		</div>
 			<?php endwhile;?>
 		</div>

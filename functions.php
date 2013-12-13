@@ -91,7 +91,7 @@ function create_post_type() {
                 'rewrite' => array('slug' => 'portfolio'),
                 'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
 
-                'taxonomies' => array('category'),                
+                'taxonomies' => array('category', 'post_tag'),                
                 )
         );
 }

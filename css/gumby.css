@@ -2594,7 +2594,7 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 .port-cat a, .port-cat h5 { font-size: 18px; background: #000; color: #fff; padding-left: 5px; padding-right: 5px; padding-bottom: 0; }
 .port-cat a:hover, .port-cat h5:hover { color: #de664b; }
 
-.port-grid div.portfolio-item { display: inline-block; float: left; padding-left: 0.87719%; padding-right: 0.87719%; width: 100%; min-height: 400px; height: auto; border: 10px #cccccc !important; }
+.port-grid div.portfolio-item { display: inline-block; float: left; padding-left: 0.87719%; padding-right: 0.87719%; width: 100%; min-height: 350px; height: auto; }
 @media only screen and (min-width: 0px) { .port-grid div.portfolio-item { width: 100%; } }
 @media only screen and (min-width: 768px) { .port-grid div.portfolio-item { width: 50%; } }
 @media only screen and (min-width: 1140px) { .port-grid div.portfolio-item { width: 33.33333%; } }
@@ -2605,9 +2605,11 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 @media screen and (min-width: 400px) { .bigname { font-size: 78px; } }
 @media screen and (min-width: 500px) { .bigname { font-size: 79.5px; } }
 
-.iconlinks a, i { font-size: 42px; text-align: center; margin: 40px 20px 20px 0px; }
+.iconlinks a, .iconlinks i { font-size: 42px; text-align: center; margin: 40px 20px 20px 0px; }
 
-li i { font-size: 26px; }
+ul.post-categories { display: inline-block; }
+
+.entry-meta { font-size: 80%; }
 
 .my-name { font-family: "Josefin Sans"; font-size: 42px; }
 
@@ -2618,3 +2620,5 @@ h1, h2, h3, h4, h5, h6 { font-family: "Josefin Sans"; }
 .vertical-nav-container ul { float: none; }
 @media only screen and (max-width: 767px) { .vertical-nav-container ul { height: 0; overflow: hidden; }
   .vertical-nav-container ul.active { height: auto; text-align: center; z-index: 999998; -webkit-transition-duration: 0.5s; -moz-transition-duration: 0.5s; -o-transition-duration: 0.5s; transition-duration: 0.5s; } }
+
+.keep-reading { float: right; font-size: 80%; }
