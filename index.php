@@ -12,10 +12,10 @@ get_header(); ?>
 	<div id="content">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<div class="row">
-				<div class="blog-item">
+				<div class="blog-item clearfix">
 					<div class="four columns">
 						<div class="port-image">
-					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
+					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail('medium'); ?></a>
 						<div class="port-cat">
 							<h5><?php the_category() ?></h5>
 						</div>
@@ -35,6 +35,8 @@ get_header(); ?>
 				</div> <!-- Blog Item -->
 			</div> <!-- Row -->
 			<?php endwhile;?>
+			<div class = "navleft"><?php previous_posts_link('Previous') ?></div>
+  			<div class="navright"><?php next_posts_link('More') ?></div>
 	</div>
 	</section>
 

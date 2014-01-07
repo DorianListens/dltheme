@@ -5,14 +5,15 @@
                 $content_width = 600; /* pixels */
 
 
-        if ( ! function_exists( 'gp_theme_setup' ) ) :
-        function gp_theme_setup() {
+        if ( ! function_exists( 'dl_theme_setup' ) ) :
+        function dl_theme_setup() {
 
                 //Add default posts and comments RSS feed links to head
                 add_theme_support( 'automatic-feed-links' );
 
                 //Enable support for Post Thumbnails on posts and pages
                 add_theme_support( 'post-thumbnails' );
+                add_image_size( 'port-thumb', 300, 9999 ); //300 pixels wide (and unlimited height)
 
                 //Register A WordPress Nav Menu
                 register_nav_menus( array(
@@ -26,7 +27,7 @@
 
 
         //Register A Sidebar Widget
-        function gp_widgets_init() {
+        function dl_widgets_init() {
             register_sidebar( array(
                 'name' => ( 'Right Sidebar' ),
                 'description'   => 'The Right sidebar',
@@ -37,12 +38,12 @@
                 'after_title' => ' </h6>',
             ) );
         }
-        add_action( 'widgets_init', 'gp_widgets_init' );
+        add_action( 'widgets_init', 'dl_widgets_init' );
 
 
 
         //Enqueue all the required stylesheet and javascript files
-        function gp_load_style_scripts() {
+        function dl_load_style_scripts() {
                 if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
                         wp_enqueue_script( 'comment-reply' );
                 }  
@@ -61,7 +62,7 @@
                 wp_enqueue_style( 'style', get_stylesheet_uri() );
 
         }
-        add_action( 'wp_enqueue_scripts', 'gp_load_style_scripts' );
+        add_action( 'wp_enqueue_scripts', 'dl_load_style_scripts' );
         
         //Walker Class - This add support for the dropdown menu in the Gumbyframework
         class Walker_Page_Custom extends Walker_Nav_menu{
@@ -79,7 +80,7 @@
         
         //Adding the portfolio post type
         add_action( 'init', 'create_post_type' );
-function create_post_type() {
+    function create_post_type() {
         register_post_type( 'dl_portfolio',
                 array(
                         'labels' => array(

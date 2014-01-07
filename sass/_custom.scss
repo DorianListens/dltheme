@@ -36,10 +36,15 @@ left: 0;
   height: auto;
 }
 
+$h-font: "Josefin Sans", sans-serif;
+
 .bigname {
-	font-family: "Josefin Sans";
+	font-family: $h-font;
+	font-weight: 100;
 	@include fittext($min-font-size: 75px, $max-font-size: 80px);
+	text-align: center;
 }
+
 
 .iconlinks {
 
@@ -47,7 +52,7 @@ left: 0;
 
 	font-size: $xlarge;
 	text-align: center;
-	margin: 40px 20px 20px 0px;
+	margin: 20px 20px 20px 0px;
 	}
 }
 
@@ -60,11 +65,11 @@ ul.post-categories {
 }
 
 .my-name {
-	font-family: "Josefin Sans";
+	font-family: $h-font;
 	font-size: $xlarge;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Josefin Sans";
+	font-family: $h-font;
 }
 
 .vertical-nav-container {
@@ -72,12 +77,14 @@ h1, h2, h3, h4, h5, h6 {
 	a.toggle {
     display: none;
     	@include respond(all-phones) {
-    		display: inline-block;
+    		display: block;
+    		margin: auto;
+    		text-align: center;
    		 }
     }
     ul {
     	float: none;
-    
+    	text-align: center;
     	@include respond(all-phones){
     		height: 0;
     		overflow: hidden;
@@ -96,4 +103,13 @@ h1, h2, h3, h4, h5, h6 {
 .keep-reading {
 	float: right;
 	font-size: 80%;
+}
+nav {
+	div.navright {
+	float: right;
+	text-align: right;}
+	div.navleft {
+	float: left;
+	text-align: left;
+	}
 }
