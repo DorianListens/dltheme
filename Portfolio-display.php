@@ -51,9 +51,14 @@ get_header(); ?>
 			<h3 class="entry-title">
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h3>
-			<div class="entry-excerpt">
+      <div class="port-date">
+      <?php echo get_the_date('F, Y') ?>
+      </div>
+			<div class="port-excerpt">
 				<?php the_excerpt(); ?>
-			</div>
+			</div> 
+
+
 		</div>
  
   <?php endwhile;?>

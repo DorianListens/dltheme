@@ -5,14 +5,37 @@
 
 //Portfolio
 
+.portfolio-item {
+  @include fancytiles(3,2,1);
+  //min-height: 350px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.port-excerpt p{
+font-size: 80%;
+}
 .port-image {
 	position: relative;
-	background: #000;
+	// background: #000;
+	height: auto;
+}
+.port-date {
+font-size: $small;
+text-align: right;
+text-transform: uppercase;
+color: lighten($body-font-color, 10);
+}
+
+.portfolio-item a img:hover{
+	opacity: 0.9;
+	-moz-opacity: 0.9;
+	-webkit-opacity: 0.9;
 }
 
 .port-cat {
 position: absolute;
-bottom: 0;
+bottom: 7px;
 left: 0;
 
 	ul {
@@ -25,7 +48,7 @@ left: 0;
 	color: #fff;
 	padding-left: 5px;
 	padding-right: 5px;
-	padding-bottom: 0;
+	padding-bottom: 5px;
 		&:hover {
 		color: lighten($body-link-color, 10);
 		}
@@ -57,12 +80,6 @@ ul.filter a.active{
 	background: $body-link-color;
 	color: #fff;
 	}
-
-.port-grid div.portfolio-item {
-  @include fancytiles(3,2,1);
-  //min-height: 350px;
-  height: auto;
-}
 
 //HEADER STUFF
 

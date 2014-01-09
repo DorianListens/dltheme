@@ -96,7 +96,7 @@ add_action( 'init', 'create_post_type' );
                     'has_archive' => true,
                     'rewrite' => array('slug' => 'portfolio'),
                     'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
-                    'taxonomies' => array('porfolio_cats', 'category', 'post_tag'),                
+                    'taxonomies' => array('porfolio_cats', 'post_tag'),                
                 )
         );
 }
