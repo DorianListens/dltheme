@@ -22,7 +22,7 @@ get_header(); ?>
 	$temp = $wp_query; 
   $wp_query = null; 
   $wp_query = new WP_Query(); 
-  $show_posts = 12;  //How many post you want on per page
+  $show_posts = -1;  //How many post you want on per page
   $permalink = 'Post name'; // Default, Post name
   $post_type = 'dl_portfolio';
    

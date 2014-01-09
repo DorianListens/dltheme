@@ -6329,7 +6329,8 @@ table {
 .iconlinks a, .iconlinks i {
   font-size: 42px;
   text-align: center;
-  margin: 20px 20px 20px 0px; }
+  margin: auto;
+  margin: 20px 15px 0px 0px; }
 
 ul.post-categories {
   display: inline-block; }

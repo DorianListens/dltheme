@@ -49,17 +49,19 @@
                 }  
 
             wp_register_script('modernizr', get_template_directory_uri().'/js/modernizr-2.6.2.min.js','1.0', 'all');
-                wp_register_script('gumby', get_template_directory_uri().'/js/gumby.min.js','1.0', 'all', true);
+            wp_register_script('gumby', get_template_directory_uri().'/js/gumby.min.js','1.0', 'all', true);
+            wp_register_script('isotope', get_template_directory_uri().'/js/isotope.pkgd.min.js')
 
             wp_enqueue_script(  'modernizr');
             wp_enqueue_script( 'jquery' );
             wp_enqueue_script( 'gumby' );
+            wp_enqueue_script( 'isotope');
 
-                wp_register_style('gumby', get_template_directory_uri().'/css/gumby.css','1.0', 'all');
+            wp_register_style('gumby', get_template_directory_uri().'/css/gumby.css','1.0', 'all');
 
 
             wp_enqueue_style( 'gumby' );
-                wp_enqueue_style( 'style', get_stylesheet_uri() );
+            wp_enqueue_style( 'style', get_stylesheet_uri() );
 
         }
         add_action( 'wp_enqueue_scripts', 'dl_load_style_scripts' );
@@ -104,4 +106,6 @@ function add_my_post_types_to_query( $query ) {
         $query->set( 'post_type', array( 'post', 'page', 'dl_portfolio' ) );
     return $query;
 }
+
+
 
