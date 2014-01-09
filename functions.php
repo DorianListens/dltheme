@@ -6,7 +6,7 @@
 
 
         if ( ! function_exists( 'dl_theme_setup' ) ) :
-        function dl_theme_setup() {
+                function dl_theme_setup() {
 
                 //Add default posts and comments RSS feed links to head
                 add_theme_support( 'automatic-feed-links' );
@@ -22,7 +22,8 @@
 
         }
         endif;
-        add_action( 'after_setup_theme', 'gp_theme_setup' );
+
+        add_action( 'after_setup_theme', 'dl_theme_setup' );
 
 
 
@@ -50,12 +51,14 @@
 
             wp_register_script('modernizr', get_template_directory_uri().'/js/modernizr-2.6.2.min.js','1.0', 'all');
             wp_register_script('gumby', get_template_directory_uri().'/js/gumby.min.js','1.0', 'all', true);
-            wp_register_script('isotope', get_template_directory_uri().'/js/isotope.pkgd.min.js')
+            wp_register_script('isotope', get_template_directory_uri().'/js/isotope.pkgd.min.js');
+            wp_register_script('isotope-init', get_template_directory_uri().'/js/isotope-init.js');
 
             wp_enqueue_script(  'modernizr');
             wp_enqueue_script( 'jquery' );
             wp_enqueue_script( 'gumby' );
-            wp_enqueue_script( 'isotope');
+            wp_enqueue_script( 'isotope' );
+            wp_enqueue_script( 'isotope-init' );
 
             wp_register_style('gumby', get_template_directory_uri().'/css/gumby.css','1.0', 'all');
 
@@ -82,19 +85,18 @@
         
         //Adding the portfolio post type
         add_action( 'init', 'create_post_type' );
-    function create_post_type() {
-        register_post_type( 'dl_portfolio',
-                array(
+            function create_post_type() {
+                register_post_type( 'dl_portfolio',
+                    array(
                         'labels' => array(
                                 'name' => __( 'Portfolio' ),
                                 'singular_name' => __( 'Portfolio' )
                         ),
-                'public' => true,
-                'has_archive' => true,
-                'rewrite' => array('slug' => 'portfolio'),
-                'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
-
-                'taxonomies' => array('category', 'post_tag'),                
+                    'public' => true,
+                    'has_archive' => true,
+                    'rewrite' => array('slug' => 'portfolio'),
+                    'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+                    'taxonomies' => array('category', 'post_tag'),                
                 )
         );
 }

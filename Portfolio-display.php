@@ -15,49 +15,33 @@ get_header(); ?>
 						<h2><?php the_title(); ?></h2>
 						<?php the_content(); ?>
 					</div>	
-					<?php endwhile; ?>
-					<hr />
-					<div class="port-grid clearfix">
+		<?php endwhile; 
+    //Setup Filter
+    $cats = get_terms('category');
+    if($cats[0]) { ?>
+        
+        <!-- Portfolio Filter -->
+        <ul id="portfolio-cats" class="filter clearfix">
+            <li><a href="#" class="active" data-filter="*"><span><?php _e('All', 'wpex'); ?></span></a></li>
+            <?php
+            foreach ($cats as $cat ) : ?>
+            <li><a href="#" data-filter=".<?php echo $cat->slug; ?>"><span><?php echo $cat->name; ?></span></a></li>
+            <?php endforeach; ?>
+        </ul><!-- /portfolio-cats -->
+  <?php } ?> 
+		<hr />
+		  <div class="port-grid clearfix">
 <?php
-	$temp = $wp_query; 
-  $wp_query = null; 
-  $wp_query = new WP_Query(); 
-  $show_posts = -1;  //How many post you want on per page
-  $permalink = 'Post name'; // Default, Post name
-  $post_type = 'dl_portfolio';
-   
-  //Know the current URI
-  $req_uri =  $_SERVER['REQUEST_URI'];  
-   
-  //Permalink set to default
-  if($permalink == 'Default') {
-  $req_uri = explode('paged=', $req_uri);
-   
-  if($_GET['paged']) {
-  $uri = $req_uri[0] . 'paged='; 
-  } else {
-  $uri = $req_uri[0] . '&paged=';
-  }
-  //Permalink is set to Post name
-  } elseif ($permalink == 'Post name') {
-  if (strpos($req_uri,'page/') !== false) {
-  $req_uri = explode('page/',$req_uri);
-  $req_uri = $req_uri[0] ;
-  }
-  $uri = $req_uri . 'page/';
-   
-  }
-   
-  //Query
-  $wp_query->query('showposts='.$show_posts.'&post_type='. $post_type .'&paged='.$paged); 
-  //count posts in the custom post type
- $count_posts = wp_count_posts($post_type);
- 
-  while ($wp_query->have_posts()) : $wp_query->the_post(); 
+  // New Query
+	$args = array( 'post_type' => 'dl_portfolio', 'posts_per_page' => -1 );
+  $loop = new WP_Query( $args );
+  while ( $loop->have_posts() ) : $loop->the_post(); 
+  // Get the terms
+  $terms = get_the_terms( get_the_ID(), 'category' );
   ?>
   <!--Do stuff-->
 
- 		<div class="portfolio-item">
+ 		<div class="portfolio-item <?php if($terms) foreach ($terms as $term) echo $term->slug .' '; ?>">
 			<div class="port-image">
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail('medium'); ?></a>
 				<div class="port-cat">
@@ -67,9 +51,9 @@ get_header(); ?>
 			<h3 class="entry-title">
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h3>
-			<!--<div class="entry-excerpt">
+			<div class="entry-excerpt">
 				<?php the_excerpt(); ?>
-			</div>-->
+			</div>
 		</div>
  
   <?php endwhile;?>
@@ -83,7 +67,4 @@ get_header(); ?>
 	</div>
 	</section>
  
-  <?php 
-  $wp_query = null; 
-  $wp_query = $temp;  // Reset
-  get_footer(); ?>
+  <?php get_footer(); ?>
