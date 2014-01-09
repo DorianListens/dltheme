@@ -82,9 +82,9 @@
                         $output .= "$indent</ul></div>\n";
                 }
         }
-        
-        //Adding the portfolio post type
-        add_action( 'init', 'create_post_type' );
+
+//Adding the portfolio post type
+add_action( 'init', 'create_post_type' );
             function create_post_type() {
                 register_post_type( 'dl_portfolio',
                     array(
@@ -96,9 +96,35 @@
                     'has_archive' => true,
                     'rewrite' => array('slug' => 'portfolio'),
                     'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
-                    'taxonomies' => array('category', 'post_tag'),                
+                    'taxonomies' => array('porfolio_cats', 'category', 'post_tag'),                
                 )
         );
+}
+
+add_action( 'init', 'dl_create_taxonomies' );
+function dl_create_taxonomies() {
+    
+// portfolio taxonomies
+    $cat_labels = array(
+        'name' => __( 'Portfolio Categories', '' ),
+        'singular_name' => __( 'Portfolio Category', '' ),
+        'search_items' =>  __( 'Search Portfolio Categories', '' ),
+        'all_items' => __( 'All Portfolio Categories', '' ),
+        'parent_item' => __( 'Parent Portfolio Category', '' ),
+        'parent_item_colon' => __( 'Parent Portfolio Category:', '' ),
+        'edit_item' => __( 'Edit Portfolio Category', '' ),
+        'update_item' => __( 'Update Portfolio Category', '' ),
+        'add_new_item' => __( 'Add New Portfolio Category', '' ),
+        'new_item_name' => __( 'New Portfolio Category Name', '' ),
+        'choose_from_most_used' => __( 'Choose from the most used portfolio categories', '' )
+    );  
+
+    register_taxonomy('portfolio_cats','dl_portfolio',array(
+        'hierarchical' => true,
+        'labels' => $cat_labels,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'portfolio-category' ),
+    ));
 }
 
 add_action( 'pre_get_posts', 'add_my_post_types_to_query' );

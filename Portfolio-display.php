@@ -17,12 +17,12 @@ get_header(); ?>
 					</div>	
 		<?php endwhile; 
     //Setup Filter
-    $cats = get_terms('category');
-    if($cats[0]) { ?>
+    $cats = get_terms('portfolio_cats');
+    if($cats) { ?>
         
         <!-- Portfolio Filter -->
         <ul id="portfolio-cats" class="filter clearfix">
-            <li><a href="#" class="active" data-filter="*"><span><?php _e('All', 'wpex'); ?></span></a></li>
+            <li><a href="#" class="active" data-filter="*"><span>All</span></a></li>
             <?php
             foreach ($cats as $cat ) : ?>
             <li><a href="#" data-filter=".<?php echo $cat->slug; ?>"><span><?php echo $cat->name; ?></span></a></li>
@@ -37,7 +37,7 @@ get_header(); ?>
   $loop = new WP_Query( $args );
   while ( $loop->have_posts() ) : $loop->the_post(); 
   // Get the terms
-  $terms = get_the_terms( get_the_ID(), 'category' );
+  $terms = get_the_terms( get_the_ID(), 'portfolio_cats' );
   ?>
   <!--Do stuff-->
 
@@ -45,7 +45,7 @@ get_header(); ?>
 			<div class="port-image">
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail('medium'); ?></a>
 				<div class="port-cat">
-				<h5><?php the_category(); ?></h5>
+				<h5><?php foreach ($terms as $term) : echo $term->name; endforeach;?></h5>
 				</div>
 			</div>
 			<h3 class="entry-title">
