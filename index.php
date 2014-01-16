@@ -21,17 +21,20 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-				<div class="eight columns">
+				<div class="eight columns blog-info">
 					<h3 class="entry-title">
 						<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h3>
 					<div class="entry-excerpt">
 						<?php the_excerpt(); ?>
 					</div> <!-- entry-excerpt -->
+					<div class="entry-tags">
+					<?php if ( has_tag() ) : {echo '<i class="icon-tag"></i>'; the_tags( '', ', ', '');} endif; ?>
+					</div>
 					<div class ="keep-reading">
 				<a href="<?php the_permalink(); ?>" rel="bookmark">Keep Reading...</a>
 			</div>
-				</div> <hr />
+				</div>
 				</div> <!-- Blog Item -->
 			</div> <!-- Row -->
 			<?php endwhile;?>

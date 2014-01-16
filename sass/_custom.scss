@@ -3,6 +3,21 @@
 
 @import "fittext";
 
+//Blog
+div.blog-item {
+	background: #fcfcfc;
+	@include box-shadow(2px 2px 5px #eee);
+	margin-bottom: 20px;
+}
+.blog-info {
+	padding-bottom: 5px;
+	padding-right: 5px;
+}
+.entry-tags {
+	font-size: 80%;
+	display: inline-block;
+}
+
 //Portfolio
 
 .portfolio-item {
@@ -71,10 +86,18 @@ ul.filter{
 	float: right;
 	list-style: none;
 	height: 30px;
+	@include respond(all-phones) {
+		height: auto;
+		float: none;
+	}
 }
 ul.filter li{
 	float: left;
 	height: 25px;
+	@include respond(all-phones) {
+		float: none;
+		margin-bottom: 10px;
+	}
 }
 ul.filter a{
 	display: block;
@@ -82,6 +105,9 @@ ul.filter a{
 	@include box-shadow(1px 1px 5px #eee);
 	margin-right: 10px;
 	padding: 0 10px;
+	@include respond(all-phones) {
+		margin-right: 0px;
+	}
 }
 ul.filter li:last-child a{
 	margin: 0px;
@@ -161,6 +187,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .keep-reading {
 	float: right;
+	display: inline-block;
 	font-size: 80%;
 }
 nav {
@@ -188,4 +215,9 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+//Thinner Rules
+hr {
+	border-bottom: 0px;
 }

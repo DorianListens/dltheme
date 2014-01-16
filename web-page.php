@@ -1,35 +1,35 @@
-<?php
+<?php 
 /**
- * The template for displaying Archive pages
+ * Template Name: Skill Page Display Template
+ *
+ * Description: The template for displying the skill pages
  *
  *
- * @package WordPress
- * @subpackage dltheme
- * @since version 1.0
  */
 get_header(); ?>
 
 	<section class="eight columns push_one">	
-	<div id="content">
-		<header class="entry-header">
-				<h2 class="entry-title"><?php single_cat_title(); ?></h2>
-
-			<?php if ( category_description() ) : // Show an optional category description ?>
-				<div class="archive-meta"><?php echo category_description(); ?></div>
-			<?php endif; ?>
-			</header>
-		<?php while ( have_posts() ) : the_post();?>
-			<div class="row">
+		<div id="content">
+				<?php while ( have_posts() ) : the_post(); ?>
+					<div>
+						<h2><?php the_title(); ?></h2>
+						<?php the_content(); ?>
+					</div>
+				<?php $theName = $post->post_name;
+				endwhile; ?>
+				<h3>Recently:</h3>
+  				<?php // New Query
+				$args = array( 'post_type' => 'dl_portfolio', 'posts_per_page' => 3, 'portfolio_cats' => $theName );
+  				$loop = new WP_Query( $args );
+  				while ( $loop->have_posts() ) : $loop->the_post(); ?>
+				<div class="row">
 				<div class="blog-item clearfix">
 					<div class="four columns">
 						<div class="port-image">
 					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail('medium'); ?></a>
-						<div class="port-cat">
-							<h5><?php the_category(); ?></h5>
-						</div>
 					</div>
 				</div>
-				<div class="eight columns">
+				<div class="eight columns blog-info">
 					<h3 class="entry-title">
 						<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h3>
@@ -42,13 +42,13 @@ get_header(); ?>
 					<div class ="keep-reading">
 				<a href="<?php the_permalink(); ?>" rel="bookmark">Keep Reading...</a>
 			</div>
-				</div> 
+				</div>
 				</div> <!-- Blog Item -->
 			</div> <!-- Row -->
 			<?php endwhile;?>
-			<?php echo paginate_links();?>
-	</div>
+
+
+		</div>
 	</section>
-		
 
 <?php get_footer(); ?>
