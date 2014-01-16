@@ -6277,6 +6277,8 @@ div.blog-item {
   -moz-box-shadow: 2px 2px 5px #eeeeee;
   box-shadow: 2px 2px 5px #eeeeee;
   margin-bottom: 20px; }
+  div.blog-item:hover {
+    background: #f4f4f4; }
 
 .blog-info {
   padding-bottom: 5px;
@@ -6311,6 +6313,8 @@ div.port-piece {
   -moz-box-shadow: 2px 2px 5px #eeeeee;
   box-shadow: 2px 2px 5px #eeeeee;
   padding-bottom: 5px; }
+  div.port-piece:hover {
+    background: #f4f4f4; }
 
 div.port-content {
   padding: 5px; }

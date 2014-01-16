@@ -3,11 +3,15 @@
 
 @import "fittext";
 
+$item-bg: #fcfcfc;
 //Blog
 div.blog-item {
-	background: #fcfcfc;
+	background: $item-bg;
 	@include box-shadow(2px 2px 5px #eee);
 	margin-bottom: 20px;
+	&:hover {
+		background: darken($item-bg, 3);
+	}
 }
 .blog-info {
 	padding-bottom: 5px;
@@ -29,9 +33,12 @@ div.blog-item {
 
 }
 div.port-piece {
-	background: #fcfcfc;
+	background: $item-bg;
 	@include box-shadow(2px 2px 5px #eee);
 	padding-bottom: 5px;
+	&:hover {
+		background: darken($item-bg, 3);
+	}
 }
 
 div.port-content {

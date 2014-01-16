@@ -16,6 +16,9 @@ get_header(); ?>
 						<?php the_content(); ?>
 					</div>
 				<?php $theName = $post->post_name;
+				if ($theName == 'radio') {
+					$theName = 'radios';
+				}
 				endwhile; ?>
 				<h3>Recently:</h3>
   				<?php // New Query
