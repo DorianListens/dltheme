@@ -6278,7 +6278,8 @@ table {
   padding-right: 0.87719%;
   width: 100%;
   height: auto;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  padding-bottom: 10px; }
   @media only screen and (min-width: 0px) {
     .portfolio-item {
       width: 100%; } }
@@ -6288,6 +6289,16 @@ table {
   @media only screen and (min-width: 1140px) {
     .portfolio-item {
       width: 33.33333%; } }
+
+div.port-piece {
+  background: #fcfcfc;
+  -webkit-box-shadow: 2px 2px 5px #eeeeee;
+  -moz-box-shadow: 2px 2px 5px #eeeeee;
+  box-shadow: 2px 2px 5px #eeeeee;
+  padding-bottom: 5px; }
+
+div.port-content {
+  padding: 5px; }
 
 .port-excerpt p {
   font-size: 80%; }
@@ -6336,7 +6347,10 @@ ul.filter li {
 
 ul.filter a {
   display: block;
-  background: #eee;
+  background: #fcfcfc;
+  -webkit-box-shadow: 1px 1px 5px #eeeeee;
+  -moz-box-shadow: 1px 1px 5px #eeeeee;
+  box-shadow: 1px 1px 5px #eeeeee;
   margin-right: 10px;
   padding: 0 10px; }
 
@@ -6417,3 +6431,19 @@ nav div.navright {
 nav div.navleft {
   float: left;
   text-align: left; }
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden; }
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }

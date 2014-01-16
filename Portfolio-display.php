@@ -31,7 +31,7 @@ get_header(); ?>
   <?php } ?> 
 		<hr />
 		  <div class="port-grid clearfix">
-<?php
+  <?php
   // New Query
 	$args = array( 'post_type' => 'dl_portfolio', 'posts_per_page' => -1 );
   $loop = new WP_Query( $args );
@@ -39,15 +39,15 @@ get_header(); ?>
   // Get the terms
   $terms = get_the_terms( get_the_ID(), 'portfolio_cats' );
   ?>
-  <!--Do stuff-->
-
  		<div class="portfolio-item <?php if($terms) foreach ($terms as $term) echo $term->slug .' '; ?>">
+      <div class="port-piece">
 			<div class="port-image">
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail('medium'); ?></a>
 				<div class="port-cat">
 				<h5><?php foreach ($terms as $term) : echo $term->name; endforeach;?></h5>
 				</div>
 			</div>
+      <div class="port-content">
 			<h3 class="entry-title">
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h3>
@@ -57,7 +57,8 @@ get_header(); ?>
 			<div class="port-excerpt">
 				<?php the_excerpt(); ?>
 			</div> 
-
+    </div>
+  </div>
 
 		</div>
  

@@ -18,14 +18,14 @@ get_header(); ?>
 				<div class="archive-meta"><?php echo category_description(); ?></div>
 			<?php endif; ?>
 			</header>
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post(); $terms = get_the_terms( get_the_ID(), 'portfolio_cats' );?>
 			<div class="row">
 				<div class="blog-item clearfix">
 					<div class="four columns">
 						<div class="port-image">
 					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail('medium'); ?></a>
 						<div class="port-cat">
-							<h5><?php the_category() ?></h5>
+							<h5><?php foreach ($term as $terms) : echo $term->name; endforeach; ?></h5>
 						</div>
 					</div>
 				</div>
