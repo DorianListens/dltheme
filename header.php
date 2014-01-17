@@ -41,3 +41,4 @@
 					</nav>
 				</div>
 			</section> <!-- End Header -->
+			<div id="whole-right-side">

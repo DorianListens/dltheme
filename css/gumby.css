@@ -6481,3 +6481,8 @@ nav div.navleft {
 
 hr {
   border-bottom: 0px; }
+
+p.footer-text {
+  float: right;
+  margin-top: 80px;
+  font-size: 12px; }
