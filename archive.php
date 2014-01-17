@@ -3,9 +3,7 @@
  * The template for displaying Archive pages
  *
  *
- * @package WordPress
- * @subpackage dltheme
- * @since version 1.0
+ * 
  */
 get_header(); ?>
 
