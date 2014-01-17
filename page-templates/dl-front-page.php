@@ -8,10 +8,10 @@
 
  get_header(); ?>
 
-	<section class="eight columns push_one">
+	<section class="eight columns push_one" id="content">
 		<div class="row">
 		<div class="six columns">	
-		<div id="content">
+		<div>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<div>
 						<?php the_content(); ?>
