@@ -11,14 +11,9 @@
 	<title>
 		<?php wp_title(' | ', true, 'right'); ?><?php bloginfo('name') ?>
 	</title>
-
-
-	<link rel="shortcut icon" href="/favicon.ico">
-
+	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/DL-icon5.ico">
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/gumby.css">
-
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	<?php wp_head(); ?>
 
