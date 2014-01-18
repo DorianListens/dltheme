@@ -20,6 +20,7 @@
 </head>
 
 <body>
+	<?php include_once("analyticstracking.php") ?>
 	<div id="container" style="margin-top: 60px;">
 		<div class ="row">
 			<section class="three columns">
