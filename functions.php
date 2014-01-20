@@ -54,6 +54,7 @@
             wp_register_script('isotope', get_template_directory_uri().'/js/isotope.pkgd.min.js');
             wp_register_script('isotope-init', get_template_directory_uri().'/js/isotope-init.js');
             wp_register_script('jquery-transition', get_template_directory_uri().'/js/jquery-transition.js');
+            wp_register_script('gumby-parallax', get_template_directory_uri().'/js/gumby.parallax.js');
 
             wp_enqueue_script(  'modernizr');
             wp_enqueue_script( 'jquery' );
@@ -61,6 +62,7 @@
             wp_enqueue_script( 'isotope' );
             wp_enqueue_script( 'isotope-init' );
             wp_enqueue_script( 'jquery-transition' );
+            wp_enqueue_script( 'gumby-parallax');
 
             wp_register_style('gumby', get_template_directory_uri().'/css/gumby.css','1.0', 'all');
 

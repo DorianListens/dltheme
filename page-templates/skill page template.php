@@ -16,7 +16,7 @@ get_header(); ?>
 						<?php the_content(); ?>
 					</div>
 				<?php $theName = $post->post_name;
-				if ($theName == 'radio') {
+				if ($theName == 'radio') { // compensate for radio buttons
 					$theName = 'radios';
 				}
 				endwhile; ?>

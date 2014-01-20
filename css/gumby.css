@@ -6246,6 +6246,12 @@ table {
   .ttip:after, .ttip:before {
     display: none; } }
 
+.parallax {
+  background-attachment: fixed !important; }
+
+.oldie .parallax, .ie9 .parallax {
+  background-attachment: static !important; }
+
 /* shame */
 .ie8 .xxwide,
 .ie8 .xwide,
@@ -6414,16 +6420,15 @@ ul.filter a.active {
   text-align: center;
   margin: auto;
   margin: 20px 15px 0px 0px; }
+  @media only screen and (max-width: 767px) {
+    .iconlinks a, .iconlinks i {
+      font-size: 26px; } }
 
 ul.post-categories {
   display: inline-block; }
 
 .entry-meta {
   font-size: 80%; }
-
-.my-name {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 42px; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Josefin Sans", sans-serif; }
@@ -6486,3 +6491,6 @@ p.footer-text {
   float: right;
   margin-top: 80px;
   font-size: 12px; }
+
+section#content {
+  padding-top: 20px; }

@@ -26,7 +26,6 @@ div.blog-item {
 
 .portfolio-item {
   @include fancytiles(3,2,1);
-  //min-height: 350px;
   height: auto;
   margin-bottom: 10px;
   padding-bottom: 10px;
@@ -49,7 +48,6 @@ font-size: 80%;
 }
 .port-image {
 	position: relative;
-	// background: #000;
 	height: auto;
 }
 .port-date {
@@ -145,6 +143,9 @@ $h-font: "Josefin Sans", sans-serif;
 	text-align: center;
 	margin: auto;
 	margin: 20px 15px 0px 0px;
+	@include respond(all-phones){
+		font-size: $large;
+		}
 	}
 }
 
@@ -156,10 +157,7 @@ ul.post-categories {
 	font-size: 80%;
 }
 
-.my-name {
-	font-family: $h-font;
-	font-size: $xlarge;
-}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: $h-font;
 }
@@ -235,3 +233,7 @@ p.footer-text {
 	margin-top: 80px;
 	font-size: 12px;
 } 
+
+section#content {
+	padding-top: 20px;
+}
