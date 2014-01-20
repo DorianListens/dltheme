@@ -4,7 +4,7 @@
 		<div id="content" <?php post_class('home-post'); ?>>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<div class="row">
-						<!-- <div class="parallax" gumby-parallax="1.5" style="height: 300px; background-size: 99%; background-position: bottom; background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>);"></div> -->
+						<!-- <div class="parallax" gumby-parallax="0.5" gumby-offset="500" style="height: 400px; background-size: 75%; background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>);"></div> --> 
 						<?php the_post_thumbnail() ?>
 					</div>
 					<div class ="row">
