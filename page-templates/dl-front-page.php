@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	<div class="five columns push_one image circle">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/ottawa-live.jpg" />
+		<img title="Dorian Scheidt" alt="Dorian Scheidt" src="<?php echo get_template_directory_uri(); ?>/img/dorian-scheidt.jpg" />
 	</div>
 	</section>
 
