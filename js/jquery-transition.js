@@ -15,4 +15,18 @@ $(document).ready(function() {
          
     
 });
+
+$(".fancylink").fancybox({
+        maxWidth    : 800,
+        maxHeight   : 600,
+        fitToView   : false,
+        width       : '70%',
+        height      : '70%',
+        autoSize    : false,
+        closeClick  : false,
+        openEffect  : 'fade',
+        closeEffect : 'fade'
+    });
+
 });
+
