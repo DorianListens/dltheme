@@ -24,13 +24,14 @@
   //user posted variables
   $name = $_POST['message_name'];
   $email = $_POST['message_email'];
+  $subjectLine = $_POST['message_subject'];
   $message = $_POST['message_text'];
   $human = $_POST['message_human'];
 
   //php mailer variables
   $to = get_option('admin_email');
-  $subject = $name." sent a message from ".get_bloginfo('name');
-  $headers = 'From: '. $email . "\r\n" .
+  $subject = $subjectLine;
+  $headers = 'From: '.$name.'<'.$email .'>'."\r\n" .
     'Reply-To: ' . $email . "\r\n";
 
   if(!$human == 0){
@@ -102,6 +103,7 @@
             <ul>
               <li class="field"><input class="input" type="text" name="message_name" placeholder="Your Name" value="<?php echo esc_attr($_POST['message_name']); ?>"/></li>
               <li class="field"><input class="input" type="email" name="message_email" placeholder="Email Address" value="<?php echo esc_attr($_POST['message_email']); ?>"/></li>
+              <li class="field"><input class="input" type="text" name="message_subject" placeholder="Subject" value="<?php echo esc_attr($_POST['message_subject']); ?>"/></li>
               <li class="field"><textarea class ="input textarea" name="message_text" rows="6" placeholder="Let's Talk..." ><?php echo esc_textarea($_POST['message_text']); ?></textarea></li><br />
               <li class="field"><input class="xnarrow text input" type="text" placeholder="Hmmm..." name="message_human"> + 3 = 5</li>
               <li class="field"><input type="hidden" name="submitted" value="1"></li>
