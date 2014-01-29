@@ -12,21 +12,22 @@ $(document).ready(function() {
     }
         $("#whole-right-side").fadeOut(500, redirectPage);      
     });
-         
-    
-});
-
-$(".fancylink").fancybox({
+    $("a.fancylink").fancybox({
         maxWidth    : 400,
-        maxHeight   : 800,
+        maxHeight   : 900,
+        minWidth    : 300,
         fitToView   : false,
         width       : '40%',
-        height      : '70%',
+        height      : '85%',
         autoSize    : false,
         closeClick  : false,
         openEffect  : 'fade',
         closeEffect : 'fade'
     });
+    
+});
+
+
 
 });
 

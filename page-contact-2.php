@@ -1,4 +1,5 @@
 <?php get_header('mini'); ?>
+<script type="text/javascript" src="http://dorianlistens.com/wrp/wp-includes/js/jquery/jquery.js?ver=1.10.2"></script>
 <script type="text/javascript">
 jQuery(function($){
 $(document).ready(function() {
@@ -62,9 +63,8 @@ $(document).ready(function() {
     $("#contact_form input, #contact_form textarea").keyup(function() { 
         $("#contact_form input, #contact_form textarea").css('border-color',''); 
         $("#result").slideUp();
+        });    
     });
-    
-});
 });
 </script>
 
@@ -74,22 +74,16 @@ $(document).ready(function() {
       <?php while ( have_posts() ) : the_post(); ?>
 
           <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-            <header class="entry-header">
-              <h1 class="entry-title"><?php the_title(); ?></h1>
-            </header>
-
-            <div class="entry-content">
-              <?php the_content(); ?>
-              <form>
-<fieldset id="contact_form">
+    <form>
+        <fieldset id="contact_form">
+            <legend>To: BigD@dorianlistens.com</legend>
     <div id="result"></div>
             <ul>
               <li class="field"><input class="input" type="text" name="message_name" placeholder="Your Name" minlength="2" required value="<?php echo esc_attr($_POST['message_name']); ?>"/></li>
               <li class="field"><input class="input" type="email" name="message_email" placeholder="Email Address" required value="<?php echo esc_attr($_POST['message_email']); ?>"/></li>
               <li class="field"><input class="input" type="text" name="message_subject" placeholder="Subject" required value="<?php echo esc_attr($_POST['message_subject']); ?>"/></li>
-              <li class="field"><textarea class ="input textarea" name="message_text" rows="6" required placeholder="Let's Talk..." ><?php echo esc_textarea($_POST['message_text']); ?></textarea></li><br />
-              <li class="field"><input class="narrow text input" type="text" placeholder="Hmmm..." required name="message_human"> + 3 = 5</li>
+              <li class="field"><textarea class ="input textarea" name="message_text" rows="5" required placeholder="Let's Talk..." ><?php echo esc_textarea($_POST['message_text']); ?></textarea></li><br />
+              <li class="field"><input class="narrow text input" type="text" placeholder="Robot?" required name="message_human"> + 3 = 5</li>
               <div class="medium danger btn" id="submit_btn"><a href="#">Send</a></div>
               <!-- <div class="medium info btn"><input type="reset" value="Clear" /></div> -->
             </ul>
@@ -103,5 +97,7 @@ $(document).ready(function() {
 
     </div><!-- #content -->
   </div><!-- #primary -->
-  <?php get_footer(); ?>
+  </div> <!-- end #container -->
+</body>
+</html>
 

@@ -49,21 +49,22 @@ if($_POST)
 		exit();
 	}
 
-	$subject 		= $user_Subject;
+	$subject 		= "DLFORM: ".$user_Subject;
 
 	//proceed with PHP email.
-	$headers = 'From: '.$user_Name. '<'.$user_Email.'>' . "rn" .
-	'Reply-To: '. $user_Email ."\r\n";
+	$headers = 'From: '.$user_Name. '<'.$user_Email.'>' . "\r\n" .
+	'Reply-To: '.$user_Email.'' . "\r\n" .
+	'X-Mailer: PHP/' . phpversion();
 	
-	$sentMail = mail($to_Email, $subject, $user_Message .'  -'.$user_Name, $headers);
+	@$sentMail = mail($to_Email, $subject, strip_tags($user_Message) .'  -'.$user_Name, $headers);
 	
 	if(!$sentMail)
 	{
-		header('HTTP/1.1 500 Could not send mail! Sorry..');
+		header('HTTP/1.1 500 Could not send mail! Sorry about that... try BigD@dorianlistens.com');
 		exit();
 	}else{
-		echo 'Hi '.$user_Name .', Thank you for your email! ';
-		echo 'Your email has already arrived in my Inbox, all I need to do is Check it.';
+		echo 'Hi '.$user_Name .', Thanks for reaching out! ';
+		echo "I'm a bit of an email addict, so I'll probably get back to you extremely quickly.";
 	}
 }
 ?>

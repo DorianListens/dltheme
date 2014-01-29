@@ -9,7 +9,7 @@
 	   <meta name="robots" content="noindex, nofollow" /> 
 	<?php } ?>
 	<title>
-		<?php wp_title(' | ', true, 'right'); ?><?php bloginfo('name') ?>
+		<?php wp_title(''); ?>
 	</title>
 	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/DL-icon5.ico">
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/gumby.css">

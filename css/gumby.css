@@ -6246,12 +6246,6 @@ table {
   .ttip:after, .ttip:before {
     display: none; } }
 
-.parallax {
-  background-attachment: fixed !important; }
-
-.oldie .parallax, .ie9 .parallax {
-  background-attachment: static !important; }
-
 /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
 .fancybox-wrap,
 .fancybox-skin,

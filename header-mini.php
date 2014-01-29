@@ -15,8 +15,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/gumby.css">
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-	<?php wp_head(); ?>
-	<script src="<?php bloginfo('template_directory'); ?>/js/jquery.validate.min.js"></script>
+	<?php // wp_head(); ?>
 
 </head>
 
