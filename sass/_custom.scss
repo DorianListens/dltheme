@@ -149,6 +149,27 @@ $h-font: "Josefin Sans", sans-serif;
 	}
 }
 
+.footer-iconlinks {
+	float: right;
+	margin-bottom: 20px;
+	a, i {
+
+	font-size: $med;
+	text-align: right;
+	margin: 5px 15px 0px 0px;
+	&:last-child {
+		margin-right: 0px;
+	}
+	@include respond(all-phones){
+		font-size: $large;
+		text-align: center;
+	}
+	}
+}
+
+
+
+
 ul.post-categories {
 	display: inline-block;
 }
@@ -234,6 +255,23 @@ p.footer-text {
 	font-size: 12px;
 } 
 
+
 section#content {
 	padding-top: 20px;
+}
+
+//DLFORM
+
+div.success {
+	margin-bottom: 10px;
+	background: $item-bg;
+	@include box-shadow(2px 2px 5px #eee);
+	padding: 5px 5px 5px 5px;
+}
+div.error {
+	margin-bottom: 10px;
+	color: $danger-color;
+	background: darken($item-bg, 10);
+	@include box-shadow(2px 2px 5px #999);
+	padding: 5px 5px 5px 5px;
 }

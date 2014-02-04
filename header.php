@@ -12,15 +12,14 @@
 		<?php wp_title(''); ?>
 	</title>
 	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/DL-icon5.ico">
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/gumby.css">
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+	<!-- <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/gumby.css">
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>"> -->
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	<?php wp_head(); ?>
 
 </head>
 
 <body>
-	<?php include_once("analyticstracking.php") ?>
 	<div id="container" style="margin-top: 60px;">
 		<div class ="row">
 			<section class="three columns">

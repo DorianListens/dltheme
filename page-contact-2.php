@@ -16,23 +16,23 @@ $(document).ready(function() {
         //we simply change border color to red if empty field using .css()
         var proceed = true;
         if(user_name==""){ 
-            $('input[name=message_name]').css('border-color','red'); 
+            $('input[name=message_name]').parent().addClass('danger'); 
             proceed = false;
         }
         if(user_email==""){ 
-            $('input[name=message_email]').css('border-color','red'); 
+            $('input[name=message_email]').parent().addClass('danger');
             proceed = false;
         }
         if(user_subject=="") {    
-            $('input[name=message_subject]').css('border-color','red'); 
+            $('input[name=message_subject]').parent().addClass('danger');
             proceed = false;
         }
         if(user_message=="") {  
-            $('textarea[name=message_text]').css('border-color','red'); 
+            $('textarea[name=message_text]').parent().addClass('danger'); 
             proceed = false;
         }
         if(user_human==""){ 
-            $('input[name=message_human]').css('border-color','red'); 
+            $('input[name=message_human]').parent().addClass('danger'); 
             proceed = false;
         }
         
@@ -61,7 +61,7 @@ $(document).ready(function() {
     
     //reset previously set border colors and hide all message on .keyup()
     $("#contact_form input, #contact_form textarea").keyup(function() { 
-        $("#contact_form input, #contact_form textarea").css('border-color',''); 
+        $("#contact_form li").removeClass('danger'); 
         $("#result").slideUp();
         });    
     });

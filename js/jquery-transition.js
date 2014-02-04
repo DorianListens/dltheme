@@ -16,7 +16,7 @@ $(document).ready(function() {
         maxWidth    : 400,
         maxHeight   : 900,
         minWidth    : 300,
-        fitToView   : false,
+        fitToView   : true,
         width       : '40%',
         height      : '85%',
         autoSize    : false,
@@ -26,7 +26,9 @@ $(document).ready(function() {
     });
     
 });
-
+$('#contact-button').on("click", function() {
+    ga('send', 'event', 'button', 'click', 'contact-button');
+});
 
 
 });
