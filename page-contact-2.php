@@ -1,4 +1,13 @@
-<?php get_header('mini'); ?>
+<?php get_header('mini'); 
+
+/*
+*
+*The Contact form Page Template.
+*
+*
+*/
+
+?>
 <script type="text/javascript" src="http://dorianlistens.com/wrp/wp-includes/js/jquery/jquery.js?ver=1.10.2"></script>
 <script type="text/javascript">
 jQuery(function($){
