@@ -8,5 +8,6 @@ Includes "applike" jQuery page transitions, a custom post type and custom taxono
 Credits
 ---
 *Gumby Responsive Grid Framework - http://gumbyframework.com
+
 *Isotope - http://isotope.metafizzy.co/
 
