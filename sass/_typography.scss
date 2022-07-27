@@ -1,5 +1,9 @@
-
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-family;
   font-weight: $header-font-weight;
   color: $header-font-color;
@@ -13,9 +17,14 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 @include respond(all-phones) {
-
-  h1,h2,h3,h4,h5,h6 { word-wrap: break-word;}
-
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-wrap: break-word;
+  }
 }
 
 h1 {
@@ -30,17 +39,29 @@ h1 {
     @include font-size($absurd);
   }
 }
-h2 { @include font-size($xlarge); }
-h3 { @include font-size($larger);}
-h4 { @include font-size($large);}
-h5 { @include font-size($med);}
-h6 { @include font-size($norm);}
+h2 {
+  @include font-size($xlarge);
+}
+h3 {
+  @include font-size($larger);
+}
+h4 {
+  @include font-size($large);
+}
+h5 {
+  @include font-size($med);
+}
+h6 {
+  @include font-size($norm);
+}
 
 @include respond(all-phones) {
-
-  h1 { @include font-size($xlarge);}
-  h2 { @include font-size($larger + 6);}
-
+  h1 {
+    @include font-size($xlarge);
+  }
+  h2 {
+    @include font-size($larger + 6);
+  }
 }
 
 .subhead {
@@ -87,7 +108,8 @@ a {
   
  ======================================================*/
 
-ul, ol {
+ul,
+ol {
   @include margin-trailer($rhythm-spacing);
 }
 
@@ -101,7 +123,9 @@ ol {
 }
 
 ul {
-  &.square, &.circle, &.disc {
+  &.square,
+  &.circle,
+  &.disc {
     margin-left: 25px;
   }
   &.square {
@@ -136,9 +160,12 @@ dl dt {
 }
 
 @include respond(portrait-tablets) {
-  
-  ul, ol, dl, p { text-align: left;}
-
+  ul,
+  ol,
+  dl,
+  p {
+    text-align: left;
+  }
 }
 
 /* Mobile */
@@ -158,7 +185,11 @@ small {
   line-height: inherit;
 }
 
-h1 small, h2 small, h3 small, h4 small, h5 small {
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small {
   color: #777;
 }
 
@@ -198,7 +229,8 @@ hr {
   height: 0;
 }
 
-abbr, acronym {
+abbr,
+acronym {
   text-transform: uppercase;
   font-size: 90%;
   color: #222;
@@ -244,12 +276,14 @@ abbr {
     content: "";
   }
   a {
-    &[href^="javascript:"]:after, &[href^="#"]:after {
+    &[href^="javascript:"]:after,
+    &[href^="#"]:after {
       content: "";
     }
   }
   /* Don't show links for images, or javascript/internal links */
-  pre, blockquote {
+  pre,
+  blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
@@ -257,18 +291,22 @@ abbr {
     display: table-header-group;
   }
   /* css-discuss.incutio.com/wiki/Printing_Tables */
-  tr, img {
+  tr,
+  img {
     page-break-inside: avoid;
   }
   @page {
     margin: 0.5cm;
   }
 
-  p, h2, h3 {
+  p,
+  h2,
+  h3 {
     orphans: 3;
     widows: 3;
   }
-  h2, h3 {
+  h2,
+  h3 {
     page-break-after: avoid;
   }
 }
