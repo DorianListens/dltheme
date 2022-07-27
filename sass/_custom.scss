@@ -6,272 +6,281 @@
 $item-bg: #fcfcfc;
 //Blog
 div.blog-item {
-	background: $item-bg;
-	@include box-shadow(2px 2px 5px #eee);
-	margin-bottom: 20px;
-	&:hover {
-		background: darken($item-bg, 3);
-	}
+  background: $item-bg;
+  @include box-shadow(2px 2px 5px #eee);
+  margin-bottom: 20px;
+  &:hover {
+    background: darken($item-bg, 3);
+  }
 }
 .blog-info {
-	padding-bottom: 5px;
-	padding-right: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
 }
 .entry-tags {
-	font-size: 80%;
-	display: inline-block;
+  font-size: 80%;
+  display: inline-block;
+}
+
+ul {
+  list-style: disc outside;
+  margin-left: 25px;
+}
+
+li ul {
+  list-style: circle outside;
 }
 
 //Portfolio
 
 .portfolio-item {
-  @include fancytiles(3,2,1);
+  @include fancytiles(3, 2, 1);
   height: auto;
   margin-bottom: 10px;
   padding-bottom: 10px;
-
 }
 div.port-piece {
-	background: $item-bg;
-	@include box-shadow(2px 2px 5px #eee);
-	padding-bottom: 5px;
-	&:hover {
-		background: darken($item-bg, 3);
-	}
+  background: $item-bg;
+  @include box-shadow(2px 2px 5px #eee);
+  padding-bottom: 5px;
+  &:hover {
+    background: darken($item-bg, 3);
+  }
 }
 
 div.port-content {
-	padding: 5px;
+  padding: 5px;
 }
-.port-excerpt p{
-font-size: 80%;
+.port-excerpt p {
+  font-size: 80%;
 }
 .port-image {
-	position: relative;
-	height: auto;
+  position: relative;
+  height: auto;
 }
 .port-date {
-font-size: $small;
-text-align: right;
-text-transform: uppercase;
-color: lighten($body-font-color, 10);
+  font-size: $small;
+  text-align: right;
+  text-transform: uppercase;
+  color: lighten($body-font-color, 10);
 }
 
-.portfolio-item a img:hover{
-	opacity: 0.9;
-	-moz-opacity: 0.9;
-	-webkit-opacity: 0.9;
+.portfolio-item a img:hover {
+  opacity: 0.9;
+  -moz-opacity: 0.9;
+  -webkit-opacity: 0.9;
 }
 
 .port-cat {
-position: absolute;
-bottom: 7px;
-left: 0;
+  position: absolute;
+  bottom: 7px;
+  left: 0;
 
-	ul {
-	margin: 0;
-	}
+  ul {
+    margin: 0;
+  }
 
-	a, h5 {
-	font-size: $med;
-	background: #000;
-	color: #fff;
-	padding-left: 5px;
-	padding-right: 5px;
-	padding-bottom: 5px;
-		&:hover {
-		color: lighten($body-link-color, 10);
-		}
-	}
+  a,
+  h5 {
+    font-size: $med;
+    background: #000;
+    color: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    &:hover {
+      color: lighten($body-link-color, 10);
+    }
+  }
 }
 // filter style
-ul.filter{
-	position : relative;
-	right: 0;
-	float: right;
-	list-style: none;
-	height: 30px;
-	@include respond(all-phones) {
-		height: auto;
-		float: none;
-	}
+ul.filter {
+  position: relative;
+  right: 0;
+  float: right;
+  list-style: none;
+  height: 30px;
+  @include respond(all-phones) {
+    height: auto;
+    float: none;
+  }
 }
-ul.filter li{
-	float: left;
-	height: 25px;
-	@include respond(all-phones) {
-		float: none;
-		margin-bottom: 10px;
-	}
+ul.filter li {
+  float: left;
+  height: 25px;
+  @include respond(all-phones) {
+    float: none;
+    margin-bottom: 10px;
+  }
 }
-ul.filter a{
-	display: block;
-	background: #fcfcfc;
-	@include box-shadow(1px 1px 5px #eee);
-	margin-right: 10px;
-	padding: 0 10px;
-	@include respond(all-phones) {
-		margin-right: 0px;
-	}
+ul.filter a {
+  display: block;
+  background: #fcfcfc;
+  @include box-shadow(1px 1px 5px #eee);
+  margin-right: 10px;
+  padding: 0 10px;
+  @include respond(all-phones) {
+    margin-right: 0px;
+  }
 }
-ul.filter li:last-child a{
-	margin: 0px;
+ul.filter li:last-child a {
+  margin: 0px;
 }
 ul.filter a:hover,
-ul.filter a.active{
-	background: $body-link-color;
-	color: #fff;
-	}
+ul.filter a.active {
+  background: $body-link-color;
+  color: #fff;
+}
 
 //HEADER STUFF
 
 $h-font: "Josefin Sans", sans-serif;
 
 .bigname {
-	font-family: $h-font;
-	font-weight: 100;
-	@include fittext($min-font-size: 75px, $max-font-size: 80px);
-	text-align: center;
+  font-family: $h-font;
+  font-weight: 100;
+  @include fittext($min-font-size: 75px, $max-font-size: 80px);
+  text-align: center;
 }
 
-
 .iconlinks {
-
-	a, i {
-
-	font-size: $xlarge;
-	text-align: center;
-	margin: auto;
-	margin: 20px 15px 0px 0px;
-	@include respond(all-phones){
-		font-size: $large;
-		}
-	}
+  a,
+  i {
+    font-size: $xlarge;
+    text-align: center;
+    margin: auto;
+    margin: 20px 15px 0px 0px;
+    @include respond(all-phones) {
+      font-size: $large;
+    }
+  }
 }
 
 .footer-iconlinks {
-	float: right;
-	margin-bottom: 20px;
-	a, i {
-
-	font-size: $med;
-	text-align: right;
-	margin: 5px 15px 0px 0px;
-	&:last-child {
-		margin-right: 0px;
-	}
-	@include respond(all-phones){
-		font-size: $large;
-		text-align: center;
-	}
-	}
+  float: right;
+  margin-bottom: 20px;
+  a,
+  i {
+    font-size: $med;
+    text-align: right;
+    margin: 5px 15px 0px 0px;
+    &:last-child {
+      margin-right: 0px;
+    }
+    @include respond(all-phones) {
+      font-size: $large;
+      text-align: center;
+    }
+  }
 }
 
-
-
-
 ul.post-categories {
-	display: inline-block;
+  display: inline-block;
 }
 
 .entry-meta {
-	font-size: 80%;
+  font-size: 80%;
 }
 
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: $h-font;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $h-font;
 }
 
 .vertical-nav-container {
-	
-	a.toggle {
+  a.toggle {
     display: none;
-    	@include respond(all-phones) {
-    		display: block;
-    		margin: auto;
-    		text-align: center;
-   		 }
+    @include respond(all-phones) {
+      display: block;
+      margin: auto;
+      text-align: center;
     }
-    ul {
-    	float: none;
-    	text-align: center;
-    	@include respond(all-phones){
-    		height: 0;
-    		overflow: hidden;
-    		&.active {
-    		height: auto;
-    		text-align: center;
-    		z-index: 999998;
-      		@include transition-duration(.5s);
-    					}
-    		}	
-    
-		}	
-
+  }
+  ul {
+    float: none;
+    list-style: none outside;
+    margin-left: 0;
+    text-align: center;
+    @include respond(all-phones) {
+      height: 0;
+      overflow: hidden;
+      &.active {
+        height: auto;
+        text-align: center;
+        z-index: 999998;
+        @include transition-duration(0.5s);
+      }
+    }
+  }
 }
 
 .keep-reading {
-	float: right;
-	display: inline-block;
-	font-size: 80%;
+  float: right;
+  display: inline-block;
+  font-size: 80%;
 }
 nav {
-	div.navright {
-	float: right;
-	text-align: right;}
-	div.navleft {
-	float: left;
-	text-align: left;
-	}
+  div.navright {
+    float: right;
+    text-align: right;
+  }
+  div.navleft {
+    float: left;
+    text-align: left;
+  }
 }
 
 //Responsive videos
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px; height: 0; overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
 }
- 
+
 .video-container iframe,
 .video-container object,
 .video-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 //Thinner Rules
 hr {
-	border-bottom: 0px;
+  border-bottom: 0px;
 }
 
 //Footer
 p.footer-text {
-	float:right;
-	margin-top: 80px;
-	font-size: 12px;
-} 
-
+  float: right;
+  margin-top: 80px;
+  font-size: 12px;
+}
 
 section#content {
-	padding-top: 20px;
+  padding-top: 20px;
 }
 
 //DLFORM
 
 div.success {
-	margin-bottom: 10px;
-	background: $item-bg;
-	@include box-shadow(2px 2px 5px #eee);
-	padding: 5px 5px 5px 5px;
+  margin-bottom: 10px;
+  background: $item-bg;
+  @include box-shadow(2px 2px 5px #eee);
+  padding: 5px 5px 5px 5px;
 }
 div.error {
-	margin-bottom: 10px;
-	color: $danger-color;
-	background: darken($item-bg, 10);
-	@include box-shadow(2px 2px 5px #999);
-	padding: 5px 5px 5px 5px;
+  margin-bottom: 10px;
+  color: $danger-color;
+  background: darken($item-bg, 10);
+  @include box-shadow(2px 2px 5px #999);
+  padding: 5px 5px 5px 5px;
 }
