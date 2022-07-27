@@ -1,13 +1,13 @@
-dltheme
-=======
+# dltheme
 
 The first theme for Dorian Listens, live at http://dorianlistens.com
 
-Includes "applike" jQuery page transitions, a custom post type and custom taxonomy, and an isotope implementation in the Portfolio page. 
+Includes "applike" jQuery page transitions, a custom post type and custom taxonomy, and an isotope implementation in the Portfolio page.
 
-Credits
----
-*Gumby Responsive Grid Framework - http://gumbyframework.com
+To build, run `bundle install` followed by `compass compile`
 
-*Isotope - http://isotope.metafizzy.co/
+## Credits
 
+- Gumby Responsive Grid Framework - https://github.com/GumbyFramework/Gumby
+
+- Isotope - http://isotope.metafizzy.co/
