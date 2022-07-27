@@ -52,11 +52,13 @@
             wp_register_script('modernizr', get_template_directory_uri().'/js/modernizr-2.6.2.min.js', false, null);
             wp_register_script('gumby', get_template_directory_uri().'/js/gumby.min.js', false, null);
             wp_register_script('jquery-transition', get_template_directory_uri().'/js/jquery-transition.js', false, null);
+            wp_register_script('prisim', get_template_directory_uri().'/js/prism.js', false, null);
 
             wp_enqueue_script( 'modernizr');
             wp_enqueue_script( 'jquery' );
             wp_enqueue_script( 'gumby' );
             wp_enqueue_script( 'jquery-transition' );
+            wp_enqueue_script('prism');
 
             if (is_page('a-portfolio')) {
                 wp_register_script('isotope', get_template_directory_uri().'/js/isotope.pkgd.min.js',false, null);
@@ -66,8 +68,10 @@
             }
 
             wp_register_style('gumby', get_template_directory_uri().'/css/gumby.css', false, null);
+            wp_register_style('prism', get_template_directory_uri().'/css/prism.css', false, null);
 
             wp_enqueue_style( 'gumby' );
+            wp_enqueue_style( 'prism' );
             wp_enqueue_style( 'style', get_stylesheet_uri(), false, null );
 
         }
